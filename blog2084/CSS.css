@@ -1,0 +1,7 @@
+#pageLoader {
+    position: fixed;
+    inset: 0;
+    background: white;
+    z-index: 99999;
+    display: none;
+}

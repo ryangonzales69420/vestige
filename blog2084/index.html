@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Links -->
+        <link rel="stylesheet" href="BrandDynamic.css">
+        <script src="JavascriptCore.js"></script>
+
+        <!-- Font Awesome-->
+        <script src="https://kit.fontawesome.com/a278dcd8e3.js" crossorigin="anonymous"></script>
+    
+        <!-- Google Icons -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body style="margin: 0px;">
+        <div id="pageLoader"></div>
+        <!-- <header style="margin: 0px;margin: 0px;">
+            <h3 style="margin: 0px;text-align: center;background-color: rgb(51, 99, 99);color: white;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding: 5px;">NONE OF ANY CONTENT HERE IS OFFICAL, THIS IS ALL COMEDIC AND NOTHING HERE IS REAL</h3>
+        </header> -->
+        <!-- <header>
+            <div id="left" class="tab">
+                <h2>Brand</h2>
+                <p>Description</p>
+            </div>
+            <div id="center" class="tab">
+                <button class="hasIcon" onclick="showPage('Dashboard')">Dashboard <span class="material-symbols-outlined">dashboard_2</span></input>
+                <button class="hasIcon" onclick="showPage('Reports')">Reports <span class="material-symbols-outlined">area_chart</span></input>
+                <button class="hasIcon" onclick="showPage('Tickets')">Tickets <span class="material-symbols-outlined">support_agent</span></input>
+            </div>
+            <div id="right" class="tab">
+                
+            </div>
+            <div style="width: 100%;height: 5px;background-image: linear-gradient(180deg,rgba(0, 0, 0, 0.062),white);flex-basis: 0%;position: absolute;top: 50px;"></div>
+        </header> -->
+        <main style="height: 100vh;display: flex;width: 100vw;"> <!-- current content -->
+            <div id="Locked" class="pageDynamic" style="background-color:#8b0f20;height:100%;width:100%;align-content:center;justify-items:center">
+
+                <div id="locked_warning_container" style="align-self: center;aspect-ratio:1.82106599;width:805px;background:#fff;border-radius:5px;box-shadow:0 2px 7px rgba(0,0,0,.65);position:relative;overflow:hidden;font-family:Arial,Helvetica,sans-serif;color:#111;">
+
+                    <div id="locked_warning_icon" style="position:absolute;left:22px;top:23px;width:65px;height:65px;border-radius:50%;background:radial-gradient(circle at 38% 30%,#f06654 0%,#c61a0b 43%,#b30000 72%,#a70000 100%);border:2px solid #bd1200;box-shadow:inset 0 1px 2px rgba(255,255,255,.45),0 1px 3px rgba(0,0,0,.45);">
+                        <div id="locked_warning_icon_bar" style="position:absolute;left:9px;right:9px;top:23px;height:15px;border-radius:1px;background:#fff;"></div>
+                    </div>
+
+                    <div id="locked_warning_content" style="position:absolute;left:109px;top:21px;width:80%;">
+
+                        <div id="locked_warning_title" style="margin:0 0 13px;color:#700000;font-size:24px;line-height:28px;font-weight:bold;">
+                            Sorry, this website has been removed.
+                        </div>
+
+                        <div id="locked_warning_paragraph_1" style="margin:0 0 12px;font-size:13px;line-height:19px;">
+                            <span id="locked_warning_domain_1" style="font-weight:bold;">blog2084.pages.dev</span>
+                            contains content that we cannot host at this time. The website may have been removed for
+                            hateful content, terroristic threats, or other violations of our acceptable use policy.
+                            If you want, you can
+                            <a title="Proceed to http://www.earthlink.net/tcs/" id="locked_acceptable_use_link" href="https://www.earthlink.net/tcs/" style="color:#0000ee;text-decoration:underline;">
+                                view a list of acceptable internet practices.
+                            </a>
+                        </div>
+
+                        <div id="locked_warning_paragraph_2" style="margin:0 0 12px;font-size:13px;line-height:19px;">
+                            We believe this content may have been created to misinform, trick, or persuade you
+                            into doing something that you may not want to do or may not realize you are doing.
+                        </div>
+
+                        <div id="locked_warning_paragraph_3" style="margin:0 0 12px;font-size:13px;line-height:19px;">
+                            We have notified
+                            <span id="locked_warning_domain_3" style="font-weight:bold;">blog2084.pages.dev</span>
+                            that action has been taken against this site. If you are the site owner, please check
+                            your
+                            <a title="Proceed to http://live.com" id="locked_internet_mailbox_link" href="http://www.live.com" style="color:#0000ee;text-decoration:underline;">
+                                Internet Mailbox
+                            </a>
+                            or your physical mail in the next several days for further information regarding this
+                            website's removal. This website was taken down on <b>12/10/2003</b>.
+                        </div>
+
+                        <a title="Return" id="locked_go_back" href="google.com/search?q=ok+ok%20%20%20okay%20okay%20okay%20okay%20%20+ok+ok+ok+ok+ok+ok+ok+ok&ei=Y7c6P5W1MjAwM2EwMDExMDYwM0FV&sxsrf=01062003&biw=1423&bih=911&gl=us&cr=countryUS&near=San+Francisco,+CA&uact=okay&sclient=okay&gs_lp=okay" style="align-content:center;display:inline-block;margin-top:6px;margin-bottom:15px;padding:6px 16px 6px;min-width:121px;height:25px;border:1px solid #4c8f2c;border-radius:3px;background:linear-gradient(#83c25d,#4f992e);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 1px 2px rgba(0,0,0,.25);color:#fff;font-size:14px;line-height:16px;font-weight:bold;text-align:center;text-decoration:none;">
+                            Go back
+                        </a>
+
+                        <div id="locked_warning_paragraph_4" style="margin:-1px 0 0;font-size:13px;line-height:19px;">
+                            If you understand the risks presented by this site, you can
+                            <button title="Proceed to http://blog2084.pages.dev (unsafe)" id="locked_proceed_anyway" onclick="showPage('Home')" style="cursor:pointer;color:#0000ee; text-decoration:underline; background-color:transparent; border-style:none; padding:0; transform:none !important; scale:1 !important; transition:none !important;">
+                                proceed anyway
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="Home" class="pageDynamic" style="height:100%;width:100%;align-content:center;justify-items:center;display: none;">
+                this content is being held in preview as i work on the details and functionality 
+            </div>
+
+            <div id="Tickets" class="pageDynamic" style="display: none;">
+                <P>Tickets</P>
+            </div>
+        </main>
+        <aside> <!-- sidebar -->
+
+        </aside>
+        <footer> <!-- legal -->
+            
+        </footer>
+</html>
