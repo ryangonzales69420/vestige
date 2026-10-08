@@ -14,5 +14,5 @@ function showPage(reference) {
 
         loader.style.display = "none";
 
-    }, 49); // loading effect duration
+    }, 45); // loading effect duration
 }

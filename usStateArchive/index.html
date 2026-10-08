@@ -1,111 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Links -->
-        <link rel="stylesheet" href="BrandDynamic.css">
-        <script src="JavascriptCore.js"></script>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>U.S. Department of State — Archive Style Mockup</title>
+    <style>
+        * { box-sizing: border-box; }
+        html, body { margin:0; padding:0; background:#fff; }
+        body {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            color:#111;
+            font-size:12px;
+        }
+        .page {
+            width:1054px;
+            margin:0 auto;
+            background:#fff;
+            min-height:925px;
+            overflow:hidden;
+        }
 
-        <!-- Font Awesome-->
-        <script src="https://kit.fontawesome.com/a278dcd8e3.js" crossorigin="anonymous"></script>
-    
-        <!-- Google Icons -->
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        /* Exact visual header treatment from the supplied reference, with a new nav row below it. */
+        .header-image {
+            width:1054px;
+            height:200px;
+            display:block;
+            background:#a90000;
+            object-fit:cover;
+            object-position:top left;
+        }
 
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    </head>
-    <body style="margin: 0px;">
-        <div id="pageLoader"></div>
-        <!-- <header style="margin: 0px;margin: 0px;">
-            <h3 style="margin: 0px;text-align: center;background-color: rgb(51, 99, 99);color: white;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding: 5px;">NONE OF ANY CONTENT HERE IS OFFICAL, THIS IS ALL COMEDIC AND NOTHING HERE IS REAL</h3>
-        </header> -->
-        <!-- <header>
-            <div id="left" class="tab">
-                <h2>Brand</h2>
-                <p>Description</p>
+        .nav-wrap {
+            height:31px;
+            padding:4px 11px 0 11px;
+            background:
+            linear-gradient(to bottom, #9b0000 0, #9b0000 3px, #000 3px, #000 6px, #eee 6px, #ddd 100%);
+            border-top:1px solid #fff;
+            border-bottom:1px solid #aaa;
+            box-shadow:0 2px 5px rgba(0,0,0,.28);
+        }
+        .nav {
+            display:flex;
+            gap:12px;
+            height:26px;
+            align-items:flex-end;
+        }
+        .nav a {
+            display:block;
+            padding:6px 15px 6px 15px;
+            min-width:110px;
+            height:23px;
+            text-align:center;
+            color:#111;
+            text-decoration:none;
+            font-weight:bold;
+            font-size:11px;
+            line-height:11px;
+            background:linear-gradient(#f8f8f8,#d9d9d9);
+            border-radius:5px 5px 0 0;
+            border:1px solid #c8c8c8;
+            border-bottom:none;
+            white-space:nowrap;
+        }
+        .nav a:hover { background:#fff; }
+
+        .content {
+            display:grid;
+            grid-template-columns:250px 500px 270px;
+            gap:10px;
+            padding:18px 9px 0 9px;
+        }
+
+        .section-head {
+            height:27px;
+            background:#a90000;
+            color:#fff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size:13px;
+            font-weight:normal;
+            line-height:27px;
+            padding:0 8px;
+            text-transform:uppercase;
+            border-bottom:1px solid #fff;
+        }
+        .section-head.blue { background:#4a4a96; }
+        .section-head .mail {
+            display:inline-block;
+            width:17px;
+            height:12px;
+            margin-left:7px;
+            vertical-align:-1px;
+            background:#f4c400;
+            border:1px solid #8d6d00;
+            position:relative;
+        }
+        .section-head .mail:after {
+            content:"";
+            position:absolute;
+            left:2px; right:2px; top:2px;
+            height:6px;
+            border-bottom:1px solid #8d6d00;
+            transform:skewY(-28deg);
+        }
+
+        .sidebar {
+            border-right:1px solid #ddd;
+            padding-right:10px;
+            min-height:660px;
+        }
+        .sidebar .feature {
+            padding:18px 0 9px 0;
+            border-bottom:1px solid #ddd;
+        }
+        .headline {
+            color:#ad0000;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:20px;
+            line-height:18px;
+            font-weight:bold;
+            margin:0 0 8px 0;
+        }
+        .sidebar p {
+            margin:5px 0;
+            font-size:14px;
+            line-height:17px;
+        }
+        .sidebar a, .article a, .rightcol a {
+            color:#0000cc;
+            text-decoration:underline;
+        }
+        .sidebar .links {
+            margin-top:14px;
+            border-top:1px solid #ddd;
+            padding-top:8px;
+        }
+        .sidebar .links h3 {
+            margin:0 0 5px 0;
+            color:#a90000;
+            font-size:15px;
+        }
+        .sidebar .links div {
+            padding:4px 0;
+            border-bottom:1px dotted #aaa;
+            font-weight:bold;
+        }
+        .template-box {
+            height:105px;
+            margin:12px 0;
+            border:1px solid #aaa;
+            background:#efefef;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:#777;
+            font-size:11px;
+            text-align:center;
+        }
+
+        .article {
+            padding:10px 12px 20px 12px;
+            border-bottom:1px solid #bbb;
+        }
+        .article h1 {
+            margin:0 0 6px 0;
+            color:#a90000;
+            font-family:Georgia, "Times New Roman", serif;
+            font-size:25px;
+            line-height:25px;
+        }
+        .article .dek {
+            font-size:13px;
+            line-height:16px;
+            font-weight:bold;
+            margin:0 0 10px 0;
+        }
+        .article .byline {
+            color:#555;
+            font-size:11px;
+            margin-bottom:10px;
+        }
+        .article .small-image {
+            width:210px;
+            height:126px;
+            margin:12px auto 13px auto;
+            border:1px solid #999;
+            background:#eee;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:#777;
+            font-size:11px;
+            text-align:center;
+        }
+        .article p {
+            font-size:13px;
+            line-height:17px;
+            margin:7px 0;
+        }
+        .article .dropcap:first-letter {
+            font-size:27px;
+            color:#a90000;
+            font-weight:bold;
+            float:left;
+            line-height:22px;
+            padding-right:2px;
+        }
+
+        .related {
+            margin-top:12px;
+            padding-top:6px;
+            border-top:1px solid #aaa;
+        }
+        .related h3 {
+            color:#a90000;
+            font-size:14px;
+            margin:0 0 5px 0;
+        }
+        .related-item {
+            font-size:11px;
+            line-height:14px;
+            margin:6px 0;
+        }
+
+        .rightcol {
+            border-left:1px solid #ddd;
+            padding-left:9px;
+        }
+        .right-story {
+            border-bottom:1px solid #aaa;
+            padding:0 0 12px 0;
+            margin-bottom:11px;
+        }
+        .right-story .story-head {
+            background:#4a4a96;
+            color:#fff;
+            font-weight:bold;
+            font-size:12px;
+            padding:5px 7px;
+            margin-bottom:7px;
+        }
+        .right-story h2 {
+            margin:0 0 3px 0;
+            font-size:15px;
+            line-height:16px;
+        }
+        .right-story p {
+            margin:3px 0;
+            font-size:11px;
+            line-height:14px;
+        }
+        .right-story .thumb {
+            width:100%;
+            height:80px;
+            background:#eee;
+            border:1px solid #999;
+            margin:5px 0;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:#777;
+            font-size:10px;
+        }
+
+        .bottom-band {
+            margin:13px 9px 0 9px;
+            border-top:7px solid #4a4a96;
+            padding-top:4px;
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr;
+            gap:8px;
+        }
+        .bottom-card {
+            border-top:3px solid #a90000;
+            padding:5px;
+            font-size:11px;
+            line-height:14px;
+        }
+        .bottom-card strong {
+            color:#a90000;
+            font-size:12px;
+        }
+
+        .footer {
+            margin-top:20px;
+            height:28px;
+            background:#eee;
+            border-top:1px solid #aaa;
+            color:#555;
+            font-size:10px;
+            padding:7px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;">
+        <div style="background-color: #000063;width: 100%;height: 20px;position: absolute;border-width: 1px;border-style: none;border-color: white;border-bottom-style: solid;"></div>
+        <div style="background-color: #9c0000;width: 100%;height: 70px;position: absolute; top: 20px;"></div>
+        <div style="background-color: #000063;width: 100%;height: 20px;position: absolute; top:90px ; border-width: 1px;border-style: none;border-color: white;border-top-style: solid;"></div>
+        <img src="/usStateArchive/assets/US_Department_of_State.png" style="width: 80px;left: 5px;position: absolute;top: 15px;">
+        <p style="flex-direction: row;display: flex;position: absolute;color: white;font-family: Bodoni Moda;">U.S. DEPARTMENT <span><p>OF</p></span> STATE</p>
+    </div>
+
+    <div class="nav-wrap">
+        <nav class="nav">
+            <a href="#">Astropolitics</a>
+            <a href="#">International Affairs</a>
+            <a href="#">National Affairs</a>
+            <a href="#">Your Voice</a>
+            <a href="#">How the Government Works</a>
+            <a href="#">What We Do</a>
+        </nav>
+    </div>
+
+    <main style="top: 35px;position:relative" class="content">
+        <aside class="sidebar">
+            <div class="section-head">TOP STORY <span class="mail"></span></div>
+            <div class="feature">
+                <h2 class="headline">Government, Policy &amp; the Public Interest</h2>
+                <p><b>January 17:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae justo nec lorem consequat interdum.</p>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; sed euismod, nisl vitae fermentum.</p>
+                <a href="#">Full Text</a>
             </div>
-            <div id="center" class="tab">
-                <button class="hasIcon" onclick="showPage('Dashboard')">Dashboard <span class="material-symbols-outlined">dashboard_2</span></input>
-                <button class="hasIcon" onclick="showPage('Reports')">Reports <span class="material-symbols-outlined">area_chart</span></input>
-                <button class="hasIcon" onclick="showPage('Tickets')">Tickets <span class="material-symbols-outlined">support_agent</span></input>
-            </div>
-            <div id="right" class="tab">
-                
-            </div>
-            <div style="width: 100%;height: 5px;background-image: linear-gradient(180deg,rgba(0, 0, 0, 0.062),white);flex-basis: 0%;position: absolute;top: 50px;"></div>
-        </header> -->
-        <main style="height: 100vh;display: flex;width: 100vw;"> <!-- current content -->
-            <div id="Locked" class="pageDynamic" style="background-color:#8b0f20;height:100%;width:100%;align-content:center;justify-items:center">
 
-                <div id="locked_warning_container" style="align-self: center;aspect-ratio:1.82106599;width:805px;background:#fff;border-radius:5px;box-shadow:0 2px 7px rgba(0,0,0,.65);position:relative;overflow:hidden;font-family:Arial,Helvetica,sans-serif;color:#111;">
-
-                    <div id="locked_warning_icon" style="position:absolute;left:22px;top:23px;width:65px;height:65px;border-radius:50%;background:radial-gradient(circle at 38% 30%,#f06654 0%,#c61a0b 43%,#b30000 72%,#a70000 100%);border:2px solid #bd1200;box-shadow:inset 0 1px 2px rgba(255,255,255,.45),0 1px 3px rgba(0,0,0,.45);">
-                        <div id="locked_warning_icon_bar" style="position:absolute;left:9px;right:9px;top:23px;height:15px;border-radius:1px;background:#fff;"></div>
-                    </div>
-
-                    <div id="locked_warning_content" style="position:absolute;left:109px;top:21px;width:80%;">
-
-                        <div id="locked_warning_title" style="margin:0 0 13px;color:#700000;font-size:24px;line-height:28px;font-weight:bold;">
-                            Sorry, this website has been removed.
-                        </div>
-
-                        <div id="locked_warning_paragraph_1" style="margin:0 0 12px;font-size:13px;line-height:19px;">
-                            <span id="locked_warning_domain_1" style="font-weight:bold;">blog2084.pages.dev</span>
-                            contains content that we cannot host at this time. The website may have been removed for
-                            hateful content, terroristic threats, or other violations of our acceptable use policy.
-                            If you want, you can
-                            <a title="Proceed to http://www.earthlink.net/tcs/" id="locked_acceptable_use_link" href="https://www.earthlink.net/tcs/" style="color:#0000ee;text-decoration:underline;">
-                                view a list of acceptable internet practices.
-                            </a>
-                        </div>
-
-                        <div id="locked_warning_paragraph_2" style="margin:0 0 12px;font-size:13px;line-height:19px;">
-                            We believe this content may have been created to misinform, trick, or persuade you
-                            into doing something that you may not want to do or may not realize you are doing.
-                        </div>
-
-                        <div id="locked_warning_paragraph_3" style="margin:0 0 12px;font-size:13px;line-height:19px;">
-                            We have notified
-                            <span id="locked_warning_domain_3" style="font-weight:bold;">blog2084.pages.dev</span>
-                            that action has been taken against this site. If you are the site owner, please check
-                            your
-                            <a title="Proceed to http://live.com" id="locked_internet_mailbox_link" href="http://www.live.com" style="color:#0000ee;text-decoration:underline;">
-                                Internet Mailbox
-                            </a>
-                            or your physical mail in the next several days for further information regarding this
-                            website's removal. This website was taken down on <b>12/10/2003</b>.
-                        </div>
-
-                        <a title="Return" id="locked_go_back" href="google.com/search?q=ok+ok%20%20%20okay%20okay%20okay%20okay%20%20+ok+ok+ok+ok+ok+ok+ok+ok&ei=Y7c6P5W1MjAwM2EwMDExMDYwM0FV&sxsrf=01062003&biw=1423&bih=911&gl=us&cr=countryUS&near=San+Francisco,+CA&uact=okay&sclient=okay&gs_lp=okay" style="align-content:center;display:inline-block;margin-top:6px;margin-bottom:15px;padding:6px 16px 6px;min-width:121px;height:25px;border:1px solid #4c8f2c;border-radius:3px;background:linear-gradient(#83c25d,#4f992e);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 1px 2px rgba(0,0,0,.25);color:#fff;font-size:14px;line-height:16px;font-weight:bold;text-align:center;text-decoration:none;">
-                            Go back
-                        </a>
-
-                        <div id="locked_warning_paragraph_4" style="margin:-1px 0 0;font-size:13px;line-height:19px;">
-                            If you understand the risks presented by this site, you can
-                            <button title="Proceed to http://blog2084.pages.dev (unsafe)" id="locked_proceed_anyway" onclick="showPage('Home')" style="cursor:pointer;color:#0000ee; text-decoration:underline; background-color:transparent; border-style:none; padding:0; transform:none !important; scale:1 !important; transition:none !important;">
-                                proceed anyway
-                            </button>
-
-                        </div>
-
-                    </div>
-                </div>
+            <div class="links">
+                <h3>QUICK LINKS</h3>
+                <div>Current Issues</div>
+                <div>Statements &amp; Remarks</div>
+                <div>Policy Resources</div>
+                <div>Press &amp; Media</div>
+                <div>Public Information</div>
             </div>
 
-            <div id="Home" class="pageDynamic" style="height:100%;width:100%;align-content:center;justify-items:center;display: none;">
-                this content is being held in preview as i work on the details and functionality 
-            </div>
+            <div class="template-box">IMAGE TEMPLATE<br>Replace with supplied image</div>
 
-            <div id="Tickets" class="pageDynamic" style="display: none;">
-                <P>Tickets</P>
+            <div class="links">
+                <h3>FEATURED</h3>
+                <div>Archives &amp; Documents</div>
+                <div>International Programs</div>
+                <div>Learning Resources</div>
             </div>
-        </main>
-        <aside> <!-- sidebar -->
-
         </aside>
-        <footer> <!-- legal -->
-            
-        </footer>
+
+        <section>
+            <div class="section-head blue">FEATURED ARTICLE <span class="mail"></span></div>
+            <article class="article">
+                <h1>A New Era of Public Service and International Leadership</h1>
+                <div class="dek">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae sem at lectus dignissim consequat.</div>
+                <div class="byline">Office of Public Affairs &nbsp; | &nbsp; January 17, 2009</div>
+
+                <div class="small-image">SMALL IMAGE TEMPLATE</div>
+
+                <p class="dropcap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed neque at ipsum pretium volutpat. Morbi interdum, sem vitae dignissim luctus, velit erat posuere nibh, eget facilisis erat lacus non lorem.</p>
+                <p>Curabitur feugiat, ipsum non volutpat laoreet, libero erat placerat augue, at aliquet mauris urna sed libero. Suspendisse potenti. Integer consequat neque sed massa volutpat, vitae pulvinar mauris viverra.</p>
+                <p>Aliquam erat volutpat. Donec finibus, neque a malesuada dictum, magna libero tristique eros, vitae egestas lacus nibh a augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                <div class="related">
+                    <h3>Related Information</h3>
+                    <div class="related-item"><a href="#">Read the full statement</a> — Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                    <div class="related-item"><a href="#">Background briefing</a> — Vestibulum ante ipsum primis in faucibus.</div>
+                </div>
+            </article>
+        </section>
+
+        <aside class="rightcol">
+            <div class="section-head">IN OTHER NEWS <span class="mail"></span></div>
+
+            <div class="right-story">
+                <div class="story-head">INTERNATIONAL AFFAIRS</div>
+                <div class="thumb">IMAGE TEMPLATE</div>
+                <h2>Strengthening Cooperation Around the World</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae mauris.</p>
+                <a href="#">Full Text</a>
+            </div>
+
+            <div class="right-story">
+                <div class="story-head">NATIONAL AFFAIRS</div>
+                <div class="thumb">IMAGE TEMPLATE</div>
+                <h2>Public Service and the Work of Government</h2>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <a href="#">Full Text</a>
+            </div>
+
+            <div class="right-story">
+                <div class="story-head">ASTROPOLITICS</div>
+                <div class="thumb">IMAGE TEMPLATE</div>
+                <h2>New Frontiers Beyond the Atmosphere</h2>
+                <p>Vestibulum id ligula porta felis euismod semper. Donec sed odio dui.</p>
+                <a href="#">Full Text</a>
+            </div>
+        </aside>
+    </main>
+
+    <div class="bottom-band">
+        <div class="bottom-card"><strong>YOUR VOICE</strong><br>Share perspectives, questions, and civic ideas with the community.</div>
+        <div class="bottom-card"><strong>HOW GOVERNMENT WORKS</strong><br>Explore the institutions, people, and processes behind public policy.</div>
+        <div class="bottom-card"><strong>WHAT WE DO</strong><br>Learn about programs, responsibilities, and public resources.</div>
+    </div>
+
+    <div class="footer">U.S. Department of State &nbsp; | &nbsp; mockup &nbsp; | &nbsp; view real information <a style="color: #555" href="http://www.state.gov/">here</a></div>
+</div>
+</body>
 </html>
